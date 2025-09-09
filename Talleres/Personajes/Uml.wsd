@@ -1,0 +1,139 @@
+@startuml
+
+title Catálogo de Personajes - Abstract Factory con Cliente y Atributos
+
+' ===== Interfaces de Partes =====
+interface Cuerpo
+interface Armadura
+interface Montura
+interface Arma
+
+' ===== Abstract Factory =====
+interface FabricaPersonaje {
+  + crearCuerpo() : Cuerpo
+  + crearArmadura() : Armadura
+  + crearMontura() : Montura
+  + crearArma() : Arma
+}
+
+' ===== Familias de Fábricas =====
+class FabricaHumanos
+class FabricaElfos
+class FabricaOrcos
+class FabricaEnanos
+
+FabricaPersonaje <|.. FabricaHumanos
+FabricaPersonaje <|.. FabricaElfos
+FabricaPersonaje <|.. FabricaOrcos
+FabricaPersonaje <|.. FabricaEnanos
+
+' ===== Cliente =====
+class Cliente {
+  - fabrica : FabricaPersonaje
+  + crearPersonaje()
+}
+
+Cliente --> FabricaPersonaje
+Cliente ..> Cuerpo
+Cliente ..> Armadura
+Cliente ..> Montura
+Cliente ..> Arma
+
+' ===== Implementaciones de Cuerpo =====
+class CuerpoHumano {
+  + fuerza : int
+  + agilidad : int
+  + inteligencia : int
+}
+class CuerpoElfo {
+  + destreza : int
+  + magia : int
+  + velocidad : int
+}
+class CuerpoOrco {
+  + fuerza : int
+  + resistencia : int
+  + brutalidad : int
+}
+class CuerpoEnano {
+  + resistencia : int
+  + fuerza : int
+  + precision : int
+}
+
+Cuerpo <|.. CuerpoHumano
+Cuerpo <|.. CuerpoElfo
+Cuerpo <|.. CuerpoOrco
+Cuerpo <|.. CuerpoEnano
+
+' ===== Implementaciones de Armadura =====
+class ArmaduraHumana {
+  + defensa : int
+  + material : String
+}
+class ArmaduraElfica {
+  + defensa : int
+  + resistenciaMagica : int
+}
+class ArmaduraOrca {
+  + defensa : int
+  + peso : int
+}
+class ArmaduraEnana {
+  + defensa : int
+  + durabilidad : int
+}
+
+Armadura <|.. ArmaduraHumana
+Armadura <|.. ArmaduraElfica
+Armadura <|.. ArmaduraOrca
+Armadura <|.. ArmaduraEnana
+
+' ===== Implementaciones de Montura =====
+class MonturaCaballo {
+  + velocidad : int
+  + resistencia : int
+}
+class MonturaCiervo {
+  + velocidad : int
+  + sigilo : int
+}
+class MonturaWargo {
+  + ferocidad : int
+  + velocidad : int
+}
+class MonturaCabra {
+  + escalada : int
+  + resistencia : int
+}
+
+Montura <|.. MonturaCaballo
+Montura <|.. MonturaCiervo
+Montura <|.. MonturaWargo
+Montura <|.. MonturaCabra
+
+' ===== Implementaciones de Armas =====
+class EspadaHumana {
+  + dano : int
+  + velocidadAtaque : int
+}
+class ArcoElfico {
+  + dano : int
+  + precision : int
+  + rango : int
+}
+class MazaOrca {
+  + dano : int
+  + peso : int
+}
+class HachaEnana {
+  + dano : int
+  + critico : double
+}
+
+Arma <|.. EspadaHumana
+Arma <|.. ArcoElfico
+Arma <|.. MazaOrca
+Arma <|.. HachaEnana
+
+@enduml
