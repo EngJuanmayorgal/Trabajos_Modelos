@@ -1,6 +1,4 @@
-@startuml
-
-title Catálogo de Personajes - Abstract Factory con Cliente y Atributos
+@startuml  Catálogo de Personajes - Abstract Factory con Cliente y Atributos
 
 ' ===== Interfaces de Partes =====
 interface Cuerpo
