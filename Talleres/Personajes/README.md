@@ -1,4 +1,4 @@
-﻿# Personjes
+﻿# Personajes
  
 
 ## 👥 Integrantes
