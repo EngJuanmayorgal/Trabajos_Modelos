@@ -1,32 +1,66 @@
-
 package Fabrica;
 
 import Arma.Arma;
+import Arma.ArmaHumano;
 import Armadura.Armadura;
+import Armadura.ArmaduraHumano;
 import Cuerpos.Cuerpo;
+import Cuerpos.CuerpoHumano;
 import Monturas.Montura;
+import Monturas.MonturaHumano;
 
-public class FabricaHumanos extends FabricaAbstracta{
+public final class FabricaHumanos extends FabricaAbstracta {
 
-    @Override
-    public Cuerpo CrearCuerpo() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    private Cuerpo cuerpo;
+    private Montura montura;
+    private Armadura armadura;
+    private Arma arma;
+
+    public FabricaHumanos() {
+        CrearArma();
+        CrearArmadura();
+        CrearCuerpo();
+        CrearMontura();
     }
 
     @Override
-    public Montura CrearMontura() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public Cuerpo getCuerpo() {
+        return cuerpo;
     }
 
     @Override
-    public Armadura CrearArmadura() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public Montura getMontura() {
+        return montura;
     }
 
     @Override
-    public Arma CrearArma() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public Armadura getArmadura() {
+        return armadura;
     }
 
-    
+    @Override
+    public Arma getArma() {
+        return arma;
+    }
+
+    @Override
+    public void CrearCuerpo() {
+        cuerpo = new CuerpoHumano();
+    }
+
+    @Override
+    public void CrearMontura() {
+        montura = new MonturaHumano();
+    }
+
+    @Override
+    public void CrearArmadura() {
+        armadura = new ArmaduraHumano();
+    }
+
+    @Override
+    public void CrearArma() {
+        arma = new ArmaHumano();
+    }
+
 }

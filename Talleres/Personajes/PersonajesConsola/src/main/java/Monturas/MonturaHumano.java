@@ -5,7 +5,8 @@ public class MonturaHumano extends Montura{
 
     @Override
     public String montura() {
-        return "";
+        return "CABALLO: Rapido y cnfiable, ideal para largas distancias y "
+                + "desplazamientos en campo abierto.";
     }
     
 }

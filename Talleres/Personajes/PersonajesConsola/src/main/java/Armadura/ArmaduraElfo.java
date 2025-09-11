@@ -5,7 +5,8 @@ public class ArmaduraElfo extends Armadura{
 
     @Override
     public String armadura() {
-        return "";
+        return "Ligera y elegante, brinda resistencia magica y fleibilidad "
+                + "en combate, aunque menos protectora fisicamente.";
     }
     
 }

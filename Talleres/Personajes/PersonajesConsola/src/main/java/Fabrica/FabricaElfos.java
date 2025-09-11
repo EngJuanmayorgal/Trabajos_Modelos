@@ -1,33 +1,66 @@
-
 package Fabrica;
 
 import Arma.Arma;
+import Arma.ArmaElfo;
 import Armadura.Armadura;
+import Armadura.ArmaduraElfo;
 import Cuerpos.Cuerpo;
+import Cuerpos.CuerpoElfo;
 import Monturas.Montura;
+import Monturas.MonturaElfo;
 
-public class FabricaElfos extends FabricaAbstracta{
+public final class FabricaElfos extends FabricaAbstracta {
 
-    @Override
-    public Cuerpo CrearCuerpo() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    private Cuerpo cuerpo;
+    private Montura montura;
+    private Armadura armadura;
+    private Arma arma;
+
+    public FabricaElfos() {
+        CrearArma();
+        CrearArmadura();
+        CrearCuerpo();
+        CrearMontura();
     }
 
     @Override
-    public Montura CrearMontura() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public Cuerpo getCuerpo() {
+        return cuerpo;
     }
 
     @Override
-    public Armadura CrearArmadura() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public Montura getMontura() {
+        return montura;
     }
 
     @Override
-    public Arma CrearArma() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public Armadura getArmadura() {
+        return armadura;
     }
 
+    @Override
+    public Arma getArma() {
+        return arma;
+    }
 
-    
+    @Override
+    public void CrearCuerpo() {
+        cuerpo = new CuerpoElfo();
+    }
+
+    @Override
+    public void CrearMontura() {
+        montura = new MonturaElfo();
+    }
+
+    @Override
+    public void CrearArmadura() {
+        armadura = new ArmaduraElfo();
+    }
+
+    @Override
+    public void CrearArma() {
+        arma = new ArmaElfo();
+    }
+
 }

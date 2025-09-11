@@ -6,7 +6,8 @@ public class CuerpoEnano extends Cuerpo{
 
     @Override
     public String Cuerpo() {
-        return "";
+        return "Compacto y resistente, congrean presicion y fuerza "
+                + "estable. No tan veloz, pero incansable en la batalla.";
     }
     
 }
