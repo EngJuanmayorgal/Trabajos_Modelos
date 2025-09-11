@@ -9,7 +9,7 @@
 
 Este proyecto implementa una aplicacion para crear personajes:
 
-## Peronajes:
+## Personajes:
 
 - **Humano**
 - **Orco**
