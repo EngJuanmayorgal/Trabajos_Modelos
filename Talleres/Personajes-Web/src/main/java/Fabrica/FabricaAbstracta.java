@@ -23,4 +23,5 @@ public abstract class FabricaAbstracta {
 
     public abstract Arma getArma();
 
+
 }
