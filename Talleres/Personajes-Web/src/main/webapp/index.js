@@ -9,9 +9,9 @@ document.getElementById("typeSelector").addEventListener("change", async functio
   // Mostrar personaje principal
   const main = document.getElementById("mainCharacter");
   main.innerHTML = `
-    <div class="name" style="color: white; font-size:30px;">${data.name}</div>
-    <img src="${data.img}" alt="${type}">`;
-
+    <div class="name" style="color: white; font-size:30px;" >${data.name}</div>
+    <img src="${data.img}" alt="${type}" <abbr title="${data.stats}"></abbr> >`;
+    
   // Mostrar partes
   const parts = document.getElementById("partsContainer");
   parts.innerHTML = "";
@@ -25,3 +25,7 @@ document.getElementById("typeSelector").addEventListener("change", async functio
     parts.appendChild(div);
   });
 });
+
+function MostrarStats(stats) {
+  alert(stats);
+}

@@ -28,8 +28,8 @@ public class CuerpoEnano extends Cuerpo {
     public String stats() {
         return "\nEstadisticas:\n"
                 + "Destreza: " + fuerza
-                + "Magia: " + resistencia
-                + "Inteligencia: " + precision;
+                + "\nMagia: " + resistencia
+                + "\nInteligencia: " + precision;
     }
 
 }

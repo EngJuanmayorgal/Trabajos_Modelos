@@ -89,3 +89,9 @@ select {
 .info {
     font-size:26px
 }
+abbr {
+    text-decoration: none;
+    font-size: 30px;
+    border-bottom: 1px dotted black;
+    cursor: help;
+}

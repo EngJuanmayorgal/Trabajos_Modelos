@@ -28,7 +28,7 @@ public class CuerpoOrco extends Cuerpo {
     public String stats() {
         return "\nEstadisticas:\n"
                 + "Destreza: " + fuerza
-                + "Magia: " + resistencia
-                + "Inteligencia: " + brutalidad;
+                + "\nMagia: " + resistencia
+                + "\nInteligencia: " + brutalidad;
     }
 }

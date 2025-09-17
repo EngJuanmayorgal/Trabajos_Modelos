@@ -30,8 +30,8 @@ public class CuerpoElfo extends Cuerpo {
     public String stats() {
         return "\nEstadisticas:\n"
                 + "Destreza: " + destreza
-                + "Magia: " + magia
-                + "Inteligencia: " + velocidad;
+                + "\nMagia: " + magia
+                + "\nInteligencia: " + velocidad;
     }
 
 }

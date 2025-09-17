@@ -17,8 +17,8 @@ public class CuerpoHumano extends Cuerpo {
     public String stats() {
         return "\nEstadisticas:\n"
                 + "Fuerza: " + fuerza
-                + "Agilidad: " + agilidad
-                + "Inteligencia: " + inteligencia;
+                + "\nAgilidad: " + agilidad
+                + "\nInteligencia: " + inteligencia;
     }
 
     @Override

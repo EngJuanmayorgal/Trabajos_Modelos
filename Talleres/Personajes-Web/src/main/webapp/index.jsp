@@ -22,7 +22,7 @@
                 <div class="sidebar">
                     <!-- Selección de tipo de personaje -->
                     <div class="character-type">
-                        <select id="typeSelector" onchange="changeCharacterType()">
+                        <select id="typeSelector" onchange="CambiarPersonaje()">
                             <option value="">-- Escoge tipo --</option>
                             <option value="humano">Humano</option>
                             <option value="elfo">Elfo</option>
