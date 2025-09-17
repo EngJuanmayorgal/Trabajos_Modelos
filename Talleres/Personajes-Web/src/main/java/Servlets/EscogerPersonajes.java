@@ -31,7 +31,7 @@ public class EscogerPersonajes extends HttpServlet {
             character.put("img", f.getCuerpo().getImg());
             JSONArray parts = new JSONArray();
             parts.put(new JSONObject().put("img", f.getArma().getImg()).put("info", f.getArma().arma()));
-            parts.put(new JSONObject().put("img", f.getArma().getImg()).put("info", f.getArmadura().armadura()));
+            parts.put(new JSONObject().put("img", f.getArmadura().getImg()).put("info", f.getArmadura().armadura()));
             parts.put(new JSONObject().put("img", f.getArma().getImg()).put("info", f.getMontura().montura()));
             character.put("parts", parts);
         } else if ("elfo".equalsIgnoreCase(type)) {
