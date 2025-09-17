@@ -5,7 +5,7 @@ public class CuerpoEnano extends Cuerpo {
     private int fuerza = 18;
     private int resistencia = 20;
     private int precision = 20;
-    private final String name = "Enano.";
+    private final String name = "Enano";
     private final String img ="images/enano.png";
 
     @Override

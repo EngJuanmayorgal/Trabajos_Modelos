@@ -34,6 +34,7 @@ public class EscogerPersonajes extends HttpServlet {
         if ("humano".equalsIgnoreCase(type)) {
             f = new FabricaHumanos();
             character.put("img", f.getCuerpo().getImg());
+            character.put("name", f.getCuerpo().getName());
             JSONArray parts = new JSONArray();
             parts.put(new JSONObject().put("img", f.getArma().getImg()).put("info", f.getArma().arma()));
             parts.put(new JSONObject().put("img", f.getArmadura().getImg()).put("info", f.getArmadura().armadura()));
@@ -42,6 +43,7 @@ public class EscogerPersonajes extends HttpServlet {
         } else if ("elfo".equalsIgnoreCase(type)) {
             f = new FabricaElfos();
             character.put("img", f.getCuerpo().getImg());
+            character.put("name", f.getCuerpo().getName());
             JSONArray parts = new JSONArray();
             parts.put(new JSONObject().put("img", f.getArma().getImg()).put("info", f.getArma().arma()));
             parts.put(new JSONObject().put("img", f.getArmadura().getImg()).put("info", f.getArmadura().armadura()));
@@ -50,6 +52,7 @@ public class EscogerPersonajes extends HttpServlet {
         } else if ("enano".equalsIgnoreCase(type)) {
             f = new FabricaEnanos();
             character.put("img", f.getCuerpo().getImg());
+            character.put("name", f.getCuerpo().getName());
             JSONArray parts = new JSONArray();
             parts.put(new JSONObject().put("img", f.getArma().getImg()).put("info", f.getArma().arma()));
             parts.put(new JSONObject().put("img", f.getArmadura().getImg()).put("info", f.getArmadura().armadura()));
@@ -58,6 +61,7 @@ public class EscogerPersonajes extends HttpServlet {
         } else if ("orco".equalsIgnoreCase(type)) {
             f = new FabricaOrcos();
             character.put("img", f.getCuerpo().getImg());
+            character.put("name", f.getCuerpo().getName());
             JSONArray parts = new JSONArray();
             parts.put(new JSONObject().put("img", f.getArma().getImg()).put("info", f.getArma().arma()));
             parts.put(new JSONObject().put("img", f.getArmadura().getImg()).put("info", f.getArmadura().armadura()));
