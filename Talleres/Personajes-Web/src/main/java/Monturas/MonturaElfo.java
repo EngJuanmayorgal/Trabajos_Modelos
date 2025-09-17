@@ -5,10 +5,16 @@ public class MonturaElfo extends Montura {
     private int velocidad = 43;
     private int sigilo = 48;
     private final String name = "Ciervo";
+    private final String img = "";
 
     @Override
     public String getName() {
         return name;
+    }
+
+    @Override
+    public String getImg() {
+        return img;
     }
 
     @Override

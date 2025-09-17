@@ -5,10 +5,16 @@ public class MonturaHumano extends Montura {
     private int velocidad = 41;
     private int resistencia = 49;
     private final String name = "Caballo";
+    private final String img = "images/caballo.png";
 
     @Override
     public String getName() {
         return name;
+    }
+
+    @Override
+    public String getImg() {
+        return img;
     }
 
     @Override

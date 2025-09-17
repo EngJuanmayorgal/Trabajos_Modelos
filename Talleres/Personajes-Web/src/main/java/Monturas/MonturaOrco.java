@@ -5,10 +5,16 @@ public class MonturaOrco extends Montura {
     private int ferocidad = 46;
     private int velocidad = 32;
     private final String name = "Wargo";
+    private final String img = "images/wargo.png";
 
     @Override
     public String getName() {
         return name;
+    }
+
+    @Override
+    public String getImg() {
+        return img;
     }
 
     @Override
