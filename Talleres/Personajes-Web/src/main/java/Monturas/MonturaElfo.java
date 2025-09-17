@@ -5,7 +5,7 @@ public class MonturaElfo extends Montura {
     private int velocidad = 43;
     private int sigilo = 48;
     private final String name = "Ciervo";
-    private final String img = "";
+    private final String img = "images/ciervo.jpeg";
 
     @Override
     public String getName() {

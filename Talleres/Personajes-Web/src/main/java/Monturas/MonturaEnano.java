@@ -5,16 +5,18 @@ public class MonturaEnano extends Montura {
     private int escalada = 49;
     private int resistencia = 39;
     private final String name = "Cabra";
-    private final String img="";
+    private final String img = "images/cabra.jpeg";
 
     @Override
     public String getName() {
         return name;
     }
- @Override
+
+    @Override
     public String getImg() {
         return img;
     }
+
     @Override
     public String montura() {
         return "CABRA: Especialista en terrenosdificiles, con gran resistencia "

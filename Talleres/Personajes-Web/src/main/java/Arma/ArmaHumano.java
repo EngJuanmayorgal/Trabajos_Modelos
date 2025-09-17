@@ -5,7 +5,7 @@ public class ArmaHumano extends Arma {
     private int daño = 36;
     private int velocidadAtaque = 40;
     private String name = "Espada";
-    private String img="images/espada.jpg";
+    private String img = "images/espada.jpg";
 
     @Override
     public String arma() {
@@ -14,15 +14,15 @@ public class ArmaHumano extends Arma {
     }
 
     @Override
+    public String getImg() {
+        return img;
+    }
+
+    @Override
     public String stats() {
         return "\nEstadisticas:\n"
                 + "Daño: " + daño
                 + "V.Ataque: " + velocidadAtaque;
-    }
-
-    @Override
-    public String getImg() {
-        return img;
     }
 
     @Override
