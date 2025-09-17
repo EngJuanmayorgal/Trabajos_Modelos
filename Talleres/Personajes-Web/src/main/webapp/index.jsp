@@ -45,6 +45,10 @@
                             <img src="images/fondo.jpeg" alt="Montura">
                             <div class="info">Montura del personaje</div>
                         </div>
+                        <div class="part">
+                            <img src="images/fondo.jpeg" alt="Stats">
+                            <div class="info">Estadisticas del personaje</div>
+                        </div>
                     </div>
                 </div>
             </div>

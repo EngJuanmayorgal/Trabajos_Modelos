@@ -35,41 +35,41 @@ public class EscogerPersonajes extends HttpServlet {
             f = new FabricaHumanos();
             character.put("img", f.getCuerpo().getImg());
             character.put("name", f.getCuerpo().getName());
-            character.put("stats", f.getCuerpo().stats());
             JSONArray parts = new JSONArray();
             parts.put(new JSONObject().put("img", f.getArma().getImg()).put("info", f.getArma().arma()));
             parts.put(new JSONObject().put("img", f.getArmadura().getImg()).put("info", f.getArmadura().armadura()));
             parts.put(new JSONObject().put("img", f.getMontura().getImg()).put("info", f.getMontura().montura()));
+            parts.put(new JSONObject().put("img", f.getCuerpo().getImg()).put("info", f.getCuerpo().stats()));
             character.put("parts", parts);
         } else if ("elfo".equalsIgnoreCase(type)) {
             f = new FabricaElfos();
             character.put("img", f.getCuerpo().getImg());
             character.put("name", f.getCuerpo().getName());
-            character.put("stats", f.getCuerpo().stats());
             JSONArray parts = new JSONArray();
             parts.put(new JSONObject().put("img", f.getArma().getImg()).put("info", f.getArma().arma()));
             parts.put(new JSONObject().put("img", f.getArmadura().getImg()).put("info", f.getArmadura().armadura()));
             parts.put(new JSONObject().put("img", f.getMontura().getImg()).put("info", f.getMontura().montura()));
+            parts.put(new JSONObject().put("img", f.getCuerpo().getImg()).put("info", f.getCuerpo().stats()));
             character.put("parts", parts);
         } else if ("enano".equalsIgnoreCase(type)) {
             f = new FabricaEnanos();
             character.put("img", f.getCuerpo().getImg());
             character.put("name", f.getCuerpo().getName());
-            character.put("stats", f.getCuerpo().stats());
             JSONArray parts = new JSONArray();
             parts.put(new JSONObject().put("img", f.getArma().getImg()).put("info", f.getArma().arma()));
             parts.put(new JSONObject().put("img", f.getArmadura().getImg()).put("info", f.getArmadura().armadura()));
             parts.put(new JSONObject().put("img", f.getMontura().getImg()).put("info", f.getMontura().montura()));
+            parts.put(new JSONObject().put("img", f.getCuerpo().getImg()).put("info", f.getCuerpo().stats()));
             character.put("parts", parts);
         } else if ("orco".equalsIgnoreCase(type)) {
             f = new FabricaOrcos();
             character.put("img", f.getCuerpo().getImg());
             character.put("name", f.getCuerpo().getName());
-            character.put("stats", f.getCuerpo().stats());
             JSONArray parts = new JSONArray();
             parts.put(new JSONObject().put("img", f.getArma().getImg()).put("info", f.getArma().arma()));
             parts.put(new JSONObject().put("img", f.getArmadura().getImg()).put("info", f.getArmadura().armadura()));
             parts.put(new JSONObject().put("img", f.getMontura().getImg()).put("info", f.getMontura().montura()));
+            parts.put(new JSONObject().put("img", f.getCuerpo().getImg()).put("info", f.getCuerpo().stats()));
             character.put("parts", parts);
         } else {
             character.put("img", "");

@@ -10,7 +10,7 @@ document.getElementById("typeSelector").addEventListener("change", async functio
   const main = document.getElementById("mainCharacter");
   main.innerHTML = `
     <div class="name" style="color: white; font-size:30px;" >${data.name}</div>
-    <img src="${data.img}" alt="${type}" <abbr title="${data.stats}"></abbr> >`;
+    <img src="${data.img}" alt="${type}" >s`;
     
   // Mostrar partes
   const parts = document.getElementById("partsContainer");
