@@ -1,4 +1,8 @@
 package Monturas; // Paquete donde está ubicada la clase MonturaElfo
+/**
+ * 
+ * @author Juan Mayorga, Mariam, Samuel
+ */
 
 // Clase MonturaElfo que hereda de la clase abstracta Montura
 public class MonturaElfo extends Montura {

@@ -1,6 +1,9 @@
 // Definimos el paquete donde se encuentra la clase
 package Fabrica;
-
+/**
+ * 
+ * @author Juan Mayorga, Mariam, Samuel
+ */
 // Importamos las interfaces y clases necesarias para construir el personaje Orco
 import Arma.Arma;                   // Importa la interfaz o clase Arma
 import Arma.ArmaOrco;               // Importa la implementación concreta del arma de los orcos

@@ -1,4 +1,8 @@
 package Servlets;
+/**
+ * 
+ * @author Juan Mayorga, Mariam, Samuel
+ */
 
 import java.io.IOException;
 
@@ -20,19 +24,32 @@ import Fabrica.FabricaOrcos;
 @WebServlet(name = "EscogerServlet", urlPatterns = {"/EscogerServlet"})
 public class EscogerPersonajes extends HttpServlet {
 
+    // Fábrica abstracta que permitirá instanciar la raza seleccionada
     public FabricaAbstracta f;
 
+    /**
+     * Método que responde a las solicitudes GET.
+     * Recibe un parámetro "type" (humano, elfo, enano u orco).
+     * Según el valor, instancia la fábrica correspondiente,
+     * construye el personaje con sus partes y devuelve un JSON
+     * con la información del personaje (nombre, imagen y descripción).
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        // Se obtiene el tipo de personaje que se solicita
         String type = request.getParameter("type");
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
 
+        // Objeto JSON que contendrá toda la información del personaje
         JSONObject character = new JSONObject();
 
+        // Dependiendo del tipo de personaje, se crea la fábrica adecuada
         if ("humano".equalsIgnoreCase(type)) {
             f = new FabricaHumanos();
+            // Se arma el JSON con sus partes
             character.put("img", f.getCuerpo().getImg());
             character.put("name", f.getCuerpo().getName());
             JSONArray parts = new JSONArray();
@@ -72,10 +89,12 @@ public class EscogerPersonajes extends HttpServlet {
             parts.put(new JSONObject().put("img", f.getCuerpo().getImg()).put("info", f.getCuerpo().stats()));
             character.put("parts", parts);
         } else {
+            // Si el tipo no coincide con ninguna raza, se retorna vacío
             character.put("img", "");
             character.put("parts", new JSONArray());
         }
 
+        // Se envía la respuesta en formato JSON al cliente
         response.getWriter().write(character.toString());
     }
 }

@@ -1,4 +1,8 @@
 package Monturas; // Paquete donde está ubicada la clase MonturaHumano
+/**
+ * 
+ * @author Juan Mayorga, Mariam, Samuel
+ */
 
 // Clase MonturaHumano que extiende de la clase abstracta Montura
 public class MonturaHumano extends Montura {

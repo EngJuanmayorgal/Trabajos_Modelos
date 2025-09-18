@@ -1,4 +1,8 @@
 package Monturas; // Paquete donde se encuentra la clase Montura
+/**
+ * 
+ * @author Juan Mayorga, Mariam, Samuel
+ */
 
 // Clase abstracta que servirá como base para todas las monturas (ej: montura de orco, humano, etc.)
 public abstract class Montura {

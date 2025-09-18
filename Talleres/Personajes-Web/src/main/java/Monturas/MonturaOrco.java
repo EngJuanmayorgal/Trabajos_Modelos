@@ -1,4 +1,8 @@
 package Monturas; // Paquete donde está ubicada la clase MonturaOrco
+/**
+ * 
+ * @author Juan Mayorga, Mariam, Samuel
+ */
 
 // Clase MonturaOrco que extiende de la clase abstracta Montura
 public class MonturaOrco extends Montura {

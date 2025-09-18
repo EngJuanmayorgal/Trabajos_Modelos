@@ -1,5 +1,9 @@
 // Definimos el paquete al que pertenece esta clase
 package Fabrica;
+/**
+ * 
+ * @author Juan Mayorga, Mariam, Samuel
+ */
 
 // Importamos las clases necesarias de los diferentes paquetes
 import Arma.Arma;           // Importa la interfaz o clase Arma
