@@ -1,0 +1,43 @@
+Ejemplo 1 
+ Singleton básico
+Qué es: La forma más simple de Singleton. Solo permite una única instancia de la clase en todo el programa.
+Qué enseña:
+Cómo restringir la creación de objetos con un constructor privado.
+Cómo devolver siempre la misma instancia mediante un método estático (getInstance).
+La idea esencial del patrón: una clase, una única instancia global.
+
+
+Ejemplo 2 
+ Logger simple con timestamp
+Qué es: Una aplicación práctica del Singleton, creando un logger (registrador de eventos).
+Qué enseña:
+Cómo usar el Singleton para centralizar el registro de logs en un solo archivo.
+Que todos los objetos del sistema comparten la misma instancia de logger.
+Añade utilidad: escritura en archivo con timestamps (fecha y hora).
+
+
+Ejemplo 3 
+ Singleton con parámetros dinámicos (configuración)
+Qué es: Un Singleton que se inicializa con parámetros la primera vez que se usa (ej. configuración de la aplicación).
+Qué enseña:
+Que un Singleton puede guardar estado global (ej. nombre de la app, versión).
+Cómo el primer llamado a getInstance() define la configuración, y luego esa misma se reutiliza siempre.
+Sirve para configuración global que debe mantenerse consistente en toda la aplicación.
+
+
+Ejemplo 4 
+ Logger avanzado con subcarpeta logs/
+Qué es: Un logger mejorado que guarda los archivos dentro de una carpeta específica (logs/).
+Qué enseña:
+Cómo el Singleton puede gestionar también recursos externos (carpetas, archivos).
+Cómo garantizar que exista un entorno consistente antes de escribir logs.
+Ejemplo más realista de cómo se usa el Singleton en sistemas grandes para gestionar directorios o archivos compartidos.
+
+
+Ejemplo 5 
+ Singleton Thread-Safe (seguro para hilos)
+Qué es: Una versión del Singleton diseñada para programación concurrente/multihilo.
+Qué enseña:
+Cómo usar bloqueos (synchronized) para asegurar que solo un hilo cree la instancia.
+Cómo proteger la escritura concurrente en archivos (sin corrupción de datos).
+Un caso avanzado del Singleton en entornos paralelos, muy común en servidores o aplicaciones empresariales.
