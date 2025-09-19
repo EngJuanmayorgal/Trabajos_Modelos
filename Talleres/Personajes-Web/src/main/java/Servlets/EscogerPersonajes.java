@@ -1,6 +1,7 @@
 package Servlets;
+
 /**
- * 
+ *
  * @author Juan Mayorga, Mariam, Samuel
  */
 
@@ -28,16 +29,20 @@ public class EscogerPersonajes extends HttpServlet {
     public FabricaAbstracta f;
 
     /**
-     * Método que responde a las solicitudes GET.
-     * Recibe un parámetro "type" (humano, elfo, enano u orco).
-     * Según el valor, instancia la fábrica correspondiente,
-     * construye el personaje con sus partes y devuelve un JSON
+     * Método que responde a las solicitudes GET.Recibe un parámetro "type"
+     * (humano, elfo, enano u orco).Según el valor, instancia la fábrica
+     * correspondiente, construye el personaje con sus partes y devuelve un JSON
      * con la información del personaje (nombre, imagen y descripción).
+     *
+     * @param request
+     * @param response
+     * @throws javax.servlet.ServletException
+     * @throws java.io.IOException
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         // Se obtiene el tipo de personaje que se solicita
         String type = request.getParameter("type");
         response.setContentType("application/json");

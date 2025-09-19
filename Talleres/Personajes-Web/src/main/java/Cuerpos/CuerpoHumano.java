@@ -4,13 +4,13 @@ package Cuerpos; // Paquete donde se agrupan las clases de cuerpos
 public class CuerpoHumano extends Cuerpo {
 
     // Atributo que representa la fuerza del humano
-    private int fuerza = 10;
+    private final int fuerza = 10;
 
     // Atributo que representa la agilidad del humano
-    private int agilidad = 18;
+    private final int agilidad = 18;
 
     // Atributo que representa la inteligencia del humano
-    private int inteligencia = 20;
+    private final int inteligencia = 20;
 
     // Nombre representativo del cuerpo humano
     private final String name = "Humano";

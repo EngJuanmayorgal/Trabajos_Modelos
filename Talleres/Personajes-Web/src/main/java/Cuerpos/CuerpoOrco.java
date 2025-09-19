@@ -8,13 +8,13 @@ package Cuerpos; // Paquete donde se agrupan las clases de cuerpos
 public class CuerpoOrco extends Cuerpo { // Clase concreta que extiende de Cuerpo
 
     // Atributo que almacena la fuerza del orco
-    private int fuerza = 20;
+    private final int fuerza = 20;
 
     // Atributo que almacena la resistencia del orco
-    private int resistencia = 20;
+    private final int resistencia = 20;
 
     // Atributo que almacena la brutalidad del orco
-    private int brutalidad = 20;
+    private final int brutalidad = 20;
 
     // Nombre representativo del cuerpo
     private final String name = "Orco";

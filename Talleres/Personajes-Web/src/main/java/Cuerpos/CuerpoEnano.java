@@ -4,13 +4,13 @@ package Cuerpos; // Paquete donde se encuentran las clases de cuerpos
 public class CuerpoEnano extends Cuerpo {
 
     // Atributo que representa la fuerza del enano
-    private int fuerza = 18;
+    private final int fuerza = 18;
 
     // Atributo que representa la resistencia del enano
-    private int resistencia = 20;
+    private final int resistencia = 20;
 
     // Atributo que representa la precisión del enano
-    private int precision = 20;
+    private final int precision = 20;
 
     // Nombre representativo del cuerpo enano
     private final String name = "Enano";
