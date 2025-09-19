@@ -10,8 +10,11 @@ document.getElementById("typeSelector").addEventListener("change", async functio
   const main = document.getElementById("mainCharacter");
   main.innerHTML = `
     <div class="name" style="color: white; font-size:30px;" >${data.name}</div>
-    <img src="${data.img}" alt="${type}" >s`;
-    
+    <img src="${data.img}" alt="${type}" > 
+      <button onclick="Reiniciar()">Guardar</button>
+    `;
+
+
   // Mostrar partes
   const parts = document.getElementById("partsContainer");
   parts.innerHTML = "";
@@ -28,4 +31,8 @@ document.getElementById("typeSelector").addEventListener("change", async functio
 
 function MostrarStats(stats) {
   alert(stats);
+}
+
+function Reiniciar() {
+  location.reload();
 }

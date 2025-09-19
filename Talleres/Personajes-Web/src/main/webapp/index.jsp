@@ -15,7 +15,7 @@
             <div class="container">
                 <!-- Personaje principal -->
                 <div class="main-character" id="mainCharacter">
-                    <div class="name" style="color: white;">Selecciona un tipo de personaje</div>
+                    <div class="name" style="color: white;">Selecciona un tipo de personaje</div>s
                 </div>
 
                 <!-- Barra lateral -->
