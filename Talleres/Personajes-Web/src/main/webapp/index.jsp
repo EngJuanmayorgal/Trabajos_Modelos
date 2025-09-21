@@ -15,14 +15,13 @@
             <div class="container">
                 <!-- Personaje principal -->
                 <div class="main-character" id="mainCharacter">
-                    <div class="name" style="color: white;">Selecciona un tipo de personaje</div>s
+                    <div class="name" style="color: white;">Selecciona un tipo de personajes</div>
                 </div>
-
                 <!-- Barra lateral -->
                 <div class="sidebar">
                     <!-- Selección de tipo de personaje -->
                     <div class="character-type">
-                        <select id="typeSelector" onchange="CambiarPersonaje()">
+                        <select id="typeSelector" onclick="CambiarPersonaje()">
                             <option value="">-- Escoge tipo --</option>
                             <option value="humano">Humano</option>
                             <option value="elfo">Elfo</option>
