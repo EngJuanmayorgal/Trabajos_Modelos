@@ -52,6 +52,7 @@ public class EscogerPersonajes extends HttpServlet {
         f = fabricaPool.getF();
         // Se arma el JSON con sus partes
         character.put("img", f.getCuerpo().getImg());
+        character.put("estado", Pool.isEstado());
         character.put("name", f.getCuerpo().getName());
         JSONArray parts = new JSONArray();
         parts.put(new JSONObject().put("img", f.getArma().getImg()).put("info", f.getArma().arma()));

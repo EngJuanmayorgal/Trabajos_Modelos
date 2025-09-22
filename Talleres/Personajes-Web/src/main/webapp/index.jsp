@@ -11,7 +11,9 @@
             <link rel="stylesheet" href="css/styles.css">
         </head>
 
-        <body style="background: url('images/fondo.jpeg'); background-size: cover; background-attachment: fixed;">
+        <body style="background: url('images/fondo.jpeg');
+                    background-size: cover;
+                    background-attachment: fixed;">
             <div class="container">
                 <!-- Personaje principal -->
                 <div class="main-character" id="mainCharacter">

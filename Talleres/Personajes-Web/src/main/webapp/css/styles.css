@@ -1,4 +1,7 @@
 body {
+    background: url('images/fondo.jpeg');
+    background-size: cover;
+    background-attachment: fixed;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -24,8 +27,8 @@ body {
 }
 
 .main-character img {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 75%;
+    max-height: 75%;
 }
 
 /* Panel derecho */
@@ -81,8 +84,8 @@ select {
 }
 
 .part img {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     object-fit: cover;
 }
 

@@ -10,6 +10,7 @@ public class Pool {
 
     private static FabricaAbstracta f;
     public static Pool instancia;
+    private static boolean estado = false;
 
     public Pool() {
     }
@@ -18,6 +19,7 @@ public class Pool {
         if (instancia == null) {
             instancia = new Pool();
             Escoger(pers);
+            estado = true;
         }
         return instancia;
     }
@@ -38,7 +40,12 @@ public class Pool {
         return f;
     }
 
+    public static boolean isEstado() {
+        return estado;
+    }
+
     public static void reiniciarInstancia() {
+        estado = false;
         instancia = null;
     }
 }

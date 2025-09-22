@@ -5,6 +5,9 @@ function CambiarPersonaje() {
     // Llamar al servlet para obtener los datos del personaje
     const response = await fetch(`EscogerServlet?type=${type}`);
     const data = await response.json();
+    if (data.estado) {
+      alert("Ya se tiene una fabrica");
+    };
 
     // Mostrar personaje principal
     const main = document.getElementById("mainCharacter");
