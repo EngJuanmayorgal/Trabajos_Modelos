@@ -1,4 +1,5 @@
-﻿﻿# Juego Snake 🐍
+
+  # Juego Snake 🐍
  
 
 ## 👥 Integrantes
