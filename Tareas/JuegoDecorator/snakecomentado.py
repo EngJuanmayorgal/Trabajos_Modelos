@@ -1,35 +1,22 @@
-import turtle  # Librería para gráficos con tortuga
-import time  # Librería para manejar pausas de tiempo
-import random  # Librería para generar números aleatorios
+import turtle   # Librería para gráficos con tortuga
+import time     # Librería para manejar pausas de tiempo
+import random   # Librería para generar números aleatorios
 
 # Paleta de colores posibles para la serpiente, comida y fondo (excepto black)
 COLORS = [
-    "red",
-    "green",
-    "blue",
-    "yellow",
-    "purple",
-    "orange",
-    "pink",
-    "cyan",
-    "magenta",
-    "lime",
-    "turquoise",
-    "gold",
-    "brown",
-    "white",
-    "gray",
+    "red", "green", "blue", "yellow", "purple",
+    "orange", "pink", "cyan", "magenta", "lime",
+    "turquoise", "gold", "brown", "white", "gray"
 ]
 
 # Colores posibles para el fondo (sin blanco ni negro)
 BACKGROUND_COLORS = [c for c in COLORS if c not in ("white", "black")]
 
-
 # -------------------
 # Función utilitaria para escoger colores aleatorios
 # -------------------
 def random_different_colors(exclude=None, count=1, pool=None):
-    pool = pool or COLORS  # si no dan pool, usar COLORS
+    pool = pool or COLORS   # si no dan pool, usar COLORS
     pool = [c for c in pool if c != "black"]  # eliminar negro siempre
     exclude = exclude or []  # lista de colores a excluir
     available = [c for c in pool if c not in exclude]  # lista de válidos
@@ -44,24 +31,19 @@ def random_different_colors(exclude=None, count=1, pool=None):
 
     return random.sample(available, count)  # escoger 'count' colores
 
-
 # -------------------
 # Decoradores
 # -------------------
 class Decorador:
     def aplicar(self, game):
-        raise NotImplementedError  # método abstracto, se implementa en hijos
-
+        raise NotImplementedError   # método abstracto, se implementa en hijos
 
 class DecoradorFondo(Decorador):
     def aplicar(self, game):
         # Cambia el fondo evitando color de serpiente y comida
         exclude = [game.snake.body_color, game.food.food.color()[0]]
-        new_bg = random_different_colors(
-            exclude=exclude, count=1, pool=BACKGROUND_COLORS
-        )[0]
+        new_bg = random_different_colors(exclude=exclude, count=1, pool=BACKGROUND_COLORS)[0]
         game.screen.bgcolor(new_bg)
-
 
 class DecoradorSerpiente(Decorador):
     def aplicar(self, game):
@@ -72,29 +54,27 @@ class DecoradorSerpiente(Decorador):
             new_color = "gray"
         game.snake.change_body_color(new_color)
 
-
 class DecoradorReducirCuerpo(Decorador):
     def aplicar(self, game):
         # Elimina todos los segmentos (reset visual del cuerpo)
         for seg in game.snake.segments:
-            seg.goto(1000, 1000)  # manda fuera de pantalla
+            seg.goto(1000, 1000)   # manda fuera de pantalla
         game.snake.segments.clear()
-
 
 # -------------------
 # Clase Snake (la serpiente)
 # -------------------
 class Snake:
     def __init__(self):
-        self.head = turtle.Turtle()  # cabeza
+        self.head = turtle.Turtle()     # cabeza
         self.head.speed(0)
         self.head.shape("square")
-        self.head.color("white")  # cabeza siempre blanca
-        self.head.penup()  # no dibujar líneas
-        self.head.goto(0, 0)  # posición inicial en centro
-        self.direction = "stop"  # dirección inicial
-        self.segments = []  # lista de segmentos del cuerpo
-        self.body_color = "gray"  # color inicial del cuerpo
+        self.head.color("white")        # cabeza siempre blanca
+        self.head.penup()               # no dibujar líneas
+        self.head.goto(0, 0)            # posición inicial en centro
+        self.direction = "stop"         # dirección inicial
+        self.segments = []              # lista de segmentos del cuerpo
+        self.body_color = "gray"        # color inicial del cuerpo
 
     def move(self):
         # mover los segmentos del cuerpo de atrás hacia adelante
@@ -108,14 +88,15 @@ class Snake:
             self.segments[0].goto(self.head.xcor(), self.head.ycor())
 
         # mover cabeza según dirección
-        if self.direction == "up":  # Arriba
+        if self.direction == "up":      # Arriba
             self.head.sety(self.head.ycor() + 20)
-        elif self.direction == "down":  # Abajo
+        elif self.direction == "down":  # Abajo 
             self.head.sety(self.head.ycor() - 20)
         elif self.direction == "left":  # Izquierda
             self.head.setx(self.head.xcor() - 20)
-        elif self.direction == "right":  # Derecha
+        elif self.direction == "right": # Derecha
             self.head.setx(self.head.xcor() + 20)
+
 
     def grow(self):
         # Crear nuevo segmento del cuerpo
@@ -168,19 +149,15 @@ class Snake:
     def go_up(self):
         if self.direction != "down":
             self.direction = "up"
-
     def go_down(self):
         if self.direction != "up":
             self.direction = "down"
-
     def go_left(self):
         if self.direction != "right":
             self.direction = "left"
-
     def go_right(self):
         if self.direction != "left":
             self.direction = "right"
-
 
 # -------------------
 # Clase Food (la comida)
@@ -209,7 +186,6 @@ class Food:
     def distance(self, snake_head):
         return self.food.distance(snake_head)
 
-
 # -------------------
 # Clase Scoreboard (marcador)
 # -------------------
@@ -217,12 +193,12 @@ class Scoreboard:
     def __init__(self):
         self.score = 0
         self.high_score = 0
-        self.writer = turtle.Turtle()  # tortuga para escribir texto
+        self.writer = turtle.Turtle()   # tortuga para escribir texto
         self.writer.speed(0)
         self.writer.color("white")
         self.writer.penup()
         self.writer.hideturtle()
-        self.writer.goto(0, 260)  # posición superior
+        self.writer.goto(0, 260)        # posición superior
         self.update()
 
         # tortuga adicional para el cartel de GAME OVER
@@ -233,7 +209,7 @@ class Scoreboard:
         self.game_over_writer.hideturtle()
 
     def update(self):
-        # Actualizacion del puntaje
+        # Actualizacion del puntaje 
         self.writer.clear()
         self.writer.write(
             f"Score: {self.score}     High Score: {self.high_score}",
@@ -264,11 +240,14 @@ class Scoreboard:
         )
 
 
+    def clear_game (self):
+        self.game_over_writer.write(""
+        )
+
 # -------------------
 # Clase Game (bucle principal del juego)
 # -------------------
 class Game:
-
     def __init__(self):
         self.delay = 0.1
         self.screen = turtle.Screen()
@@ -285,7 +264,7 @@ class Game:
         self.decoradores = {
             3: DecoradorFondo(),
             4: DecoradorSerpiente(),
-            5: DecoradorReducirCuerpo(),
+            5: DecoradorReducirCuerpo()
         }
 
         # Controles de teclado
@@ -320,8 +299,8 @@ class Game:
     def check_food(self):
         # Si la cabeza está cerca de la comida
         if self.food.distance(self.snake.head) < 20:
-            self.snake.grow()  # crecer
-            self.scoreboard.increase()  # subir puntaje
+            self.snake.grow()          # crecer
+            self.scoreboard.increase() # subir puntaje
 
             # Tirar dado para aplicar decoradores
             roll = random.randint(0, 5)
@@ -329,16 +308,14 @@ class Game:
                 self.decoradores[roll].aplicar(self)
 
             # refrescar comida con colores válidos
-            self.food.refresh(
-                exclude_colors=[self.snake.body_color, self.screen.bgcolor()]
-            )
+            self.food.refresh(exclude_colors=[self.snake.body_color, self.screen.bgcolor()])
 
     def update_loop(self):
         try:
-            self.screen.update()  # refrescar pantalla
-            self.snake.move()  # mover serpiente
-            self.check_food()  # verificar comida
-            self.check_collisions()  # verificar colisiones
+            self.screen.update()      # refrescar pantalla
+            self.snake.move()         # mover serpiente
+            self.check_food()         # verificar comida
+            self.check_collisions()   # verificar colisiones
             # programar siguiente frame
             self.screen.ontimer(self.update_loop, int(self.delay * 1000))
         except turtle.Terminator:
@@ -346,8 +323,7 @@ class Game:
 
     def run(self):
         self.update_loop()
-        self.screen.mainloop()  # iniciar bucle principal
-
+        self.screen.mainloop()   # iniciar bucle principal
 
 # -------------------
 # Punto de entrada
