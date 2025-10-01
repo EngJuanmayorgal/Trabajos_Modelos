@@ -88,13 +88,13 @@ class Snake:
             self.segments[0].goto(self.head.xcor(), self.head.ycor())
 
         # mover cabeza según dirección
-        if self.direction == "up":
+        if self.direction == "up":      # Arriba
             self.head.sety(self.head.ycor() + 20)
-        elif self.direction == "down":
+        elif self.direction == "down":  # Abajo 
             self.head.sety(self.head.ycor() - 20)
-        elif self.direction == "left":
+        elif self.direction == "left":  # Izquierda
             self.head.setx(self.head.xcor() - 20)
-        elif self.direction == "right":
+        elif self.direction == "right": # Derecha
             self.head.setx(self.head.xcor() + 20)
 
     def grow(self):
@@ -135,7 +135,7 @@ class Snake:
             seg.color(color)
 
     def reset(self):
-        # Reinicia la serpiente
+        # Reinicia la serpiente despues de algun choque
         time.sleep(1)
         self.head.goto(0, 0)
         self.direction = "stop"
@@ -171,7 +171,7 @@ class Food:
 
     def refresh(self, exclude_colors=None):
         exclude_colors = exclude_colors or []
-        # posición aleatoria dentro del área
+        # Genera posición aleatoria dentro del área
         x = random.randint(-280, 280)
         y = random.randint(-280, 280)
         self.food.goto(x, y)
@@ -208,6 +208,7 @@ class Scoreboard:
         self.game_over_writer.hideturtle()
 
     def update(self):
+        # Actualizacion del puntaje 
         self.writer.clear()
         self.writer.write(
             f"Score: {self.score}     High Score: {self.high_score}",
@@ -216,12 +217,16 @@ class Scoreboard:
         )
 
     def increase(self):
+        # Aumenta el puntaje
         self.score += 10
+
+        # Actualiza el record (si es necesario)
         if self.score > self.high_score:
             self.high_score = self.score
         self.update()
 
     def reset(self):
+        # Reinicia el puntaje
         self.score = 0
         self.update()
 
