@@ -2,7 +2,7 @@ import turtle   # Librería para gráficos con tortuga
 import time     # Librería para manejar pausas de tiempo
 import random   # Librería para generar números aleatorios
 
-# Paleta de colores posibles para la serpiente, comida y fondo (excepto black)
+# Lista de colores posibles para la serpiente, comida y fondo (excepto black)
 COLORS = [
     "red", "green", "blue", "yellow", "purple",
     "orange", "pink", "cyan", "magenta", "lime",
@@ -14,10 +14,10 @@ BACKGROUND_COLORS = [c for c in COLORS if c not in ("white", "black")]
 
 # Función utilitaria para escoger colores aleatorios
 def random_different_colors(exclude=None, count=1, pool=None):
-    pool = pool or COLORS   # si no dan pool, usar COLORS
-    pool = [c for c in pool if c != "black"]  # eliminar negro siempre
-    exclude = exclude or []  # lista de colores a excluir
-    available = [c for c in pool if c not in exclude]  # lista de válidos
+    pool = pool or COLORS   # Si no dan pool, usar COLORS
+    pool = [c for c in pool if c != "black"]  # Eliminar negro siempre
+    exclude = exclude or []  # Lista de colores a excluir
+    available = [c for c in pool if c not in exclude]  # Lista de válidos
 
     if not available:
         available = [c for c in pool if c not in exclude] or pool[:]
@@ -35,6 +35,7 @@ class Decorador:
         raise NotImplementedError
 
 class DecoradorFondo(Decorador):
+    # Decorador que cambia el color del fondo
     def aplicar(self, game):
         exclude = [game.snake.body_color, game.food.food.color()[0]]
         new_bg = random_different_colors(exclude=exclude, count=1, pool=BACKGROUND_COLORS)[0]
@@ -42,6 +43,7 @@ class DecoradorFondo(Decorador):
         game.scoreboard.update_decorator("Decorador: Cambio de fondo")
 
 class DecoradorSerpiente(Decorador):
+    # Decorador que cambia el color de la serpiente
     def aplicar(self, game):
         exclude = [game.screen.bgcolor(), game.food.food.color()[0], "black"]
         new_color = random_different_colors(exclude=exclude, count=1)[0]
@@ -51,6 +53,7 @@ class DecoradorSerpiente(Decorador):
         game.scoreboard.update_decorator("Decorador: Cambio de color de la serpiente")
 
 class DecoradorReducirCuerpo(Decorador):
+    # Decorador que elimina los segmentos del cuerpo
     def aplicar(self, game):
         for seg in game.snake.segments:
             seg.goto(1000, 1000)
@@ -73,6 +76,7 @@ class Snake:
         self.body_color = "gray"
 
     def move(self):
+        # Mueve los segmentos para seguir la cabeza
         for i in range(len(self.segments) - 1, 0, -1):
             x = self.segments[i - 1].xcor()
             y = self.segments[i - 1].ycor()
@@ -91,6 +95,7 @@ class Snake:
             self.head.setx(self.head.xcor() + 20)
 
     def grow(self):
+        # Agrega nuevos segmentos al cuerpo
         new_segment = turtle.Turtle()
         new_segment.speed(0)
         new_segment.shape("square")
@@ -118,6 +123,7 @@ class Snake:
         self.segments.append(new_segment)
 
     def change_body_color(self, color):
+        # Cambia el color del cuerpo
         if color == "black":
             color = "gray"
         self.body_color = color
@@ -125,6 +131,7 @@ class Snake:
             seg.color(color)
 
     def reset(self):
+        # Reinicia la serpiente al centro de la pantalla
         time.sleep(1)
         self.head.goto(0, 0)
         self.direction = "stop"
@@ -133,6 +140,7 @@ class Snake:
         self.segments.clear()
         self.body_color = "gray"
 
+    # Metodos de direccion evitando ir en las direcciones de 180 grados
     def go_up(self):
         if self.direction != "down":
             self.direction = "up"
@@ -151,6 +159,7 @@ class Snake:
 # -------------------
 class Food:
     def __init__(self):
+        # Crea la comida
         self.food = turtle.Turtle()
         self.food.speed(0)
         self.food.shape("circle")
@@ -158,6 +167,7 @@ class Food:
         self.refresh(exclude_colors=[])
 
     def refresh(self, exclude_colors=None):
+        # Cambia la posicion y el color de la comida
         exclude_colors = exclude_colors or []
         x = random.randint(-280, 280)
         y = random.randint(-280, 280)
@@ -178,6 +188,8 @@ class Scoreboard:
     def __init__(self):
         self.score = 0
         self.high_score = 0
+
+        # Tortuga para mostrar el puntaje
         self.writer = turtle.Turtle()
         self.writer.speed(0)
         self.writer.color("white")
@@ -186,6 +198,7 @@ class Scoreboard:
         self.writer.goto(0, 260)
         self.update()
 
+        # Tortuga para mostrar el nombre del decorador usado
         self.writer_decorador = turtle.Turtle()
         self.writer_decorador.speed(0)
         self.writer_decorador.color("white")
@@ -193,6 +206,7 @@ class Scoreboard:
         self.writer_decorador.hideturtle()
         self.writer_decorador.goto(0, 230)
 
+        # Tortuga pra el mensaje de Game Over
         self.game_over_writer = turtle.Turtle()
         self.game_over_writer.speed(0)
         self.game_over_writer.color("red")
@@ -202,6 +216,7 @@ class Scoreboard:
         self.game_over_visible = False
 
     def update(self):
+        # Actualiza el puntaje 
         self.writer.clear()
         self.writer.write(
             f"Score: {self.score}     High Score: {self.high_score}",
@@ -209,7 +224,8 @@ class Scoreboard:
             font=("courier", 24, "normal"),
         )
 
-    def update_decorator(self, message):
+    def update_decorator(self, message): 
+        # Muestra en pantalla el decorador que se usa
         self.writer_decorador.clear()
         self.writer_decorador.write(
             message,
@@ -218,20 +234,24 @@ class Scoreboard:
         )
 
     def clear_decorator(self):
+        # Limpia el texto del decorador actual usado
         self.writer_decorador.clear()
 
     def increase(self):
+        # Suma los puntos correspondientes y actualiza el puntaje de record (si es necesario)
         self.score += 10
         if self.score > self.high_score:
             self.high_score = self.score
         self.update()
 
     def reset(self):
+        # Reinicia el putuntaje despues de chocar sin borrar el record
         self.score = 0
         self.update()
         self.clear_decorator()
 
     def game_over(self):
+        # Hace saltar el mensaje de Game Over
         self.game_over_writer.goto(0, 0)
         self.game_over_writer.write(
             "GAME OVER",
@@ -241,6 +261,7 @@ class Scoreboard:
         self.game_over_visible = True
 
     def clear_game_over(self):
+        # Elimina el mensaje de Game Over
         self.game_over_writer.clear()
         self.game_over_visible = False
 
@@ -249,6 +270,7 @@ class Scoreboard:
 # -------------------
 class Game:
     def __init__(self):
+        # Configuraciones de la ventana de juego
         self.delay = 0.1
         self.screen = turtle.Screen()
         self.screen.title("Snake con Decoradores y Colores (Game Over con Space)")
@@ -260,6 +282,7 @@ class Game:
         self.food = Food()
         self.scoreboard = Scoreboard()
 
+        # Diccionario de los decoradores
         self.decoradores = {
             3: DecoradorFondo(),
             4: DecoradorSerpiente(),
@@ -274,6 +297,7 @@ class Game:
         self.screen.onkeypress(self.clear_game_over_message, "space")
 
     def clear_game_over_message(self):
+        # Permite reiniciar el juego si el mensaje de Game Over esta en pantalla
         if self.scoreboard.game_over_visible:
             self.scoreboard.clear_game_over()
             self.snake.reset()
@@ -281,6 +305,7 @@ class Game:
             self.screen.bgcolor("black")
 
     def check_collisions(self):
+        # Verificacion de si la serpiente choca con las parades o su mismo cuerpo
         if (
             self.snake.head.xcor() > 280
             or self.snake.head.xcor() < -280
@@ -297,9 +322,12 @@ class Game:
                 break
 
     def check_food(self):
+        # Detecta si la serpiente come
         if self.food.distance(self.snake.head) < 20:
             self.snake.grow()
             self.scoreboard.increase()
+
+            # Aplica un decorador de forma aleatoria
             roll = random.randint(0, 5)
             if roll in self.decoradores:
                 self.decoradores[roll].aplicar(self)
@@ -308,6 +336,7 @@ class Game:
             self.food.refresh(exclude_colors=[self.snake.body_color, self.screen.bgcolor()])
 
     def update_loop(self):
+        # Ciclo principal: Actualiza la pantalla y controla los choques
         try:
             self.screen.update()
             if not self.scoreboard.game_over_visible:
@@ -319,6 +348,7 @@ class Game:
             print("Ventana cerrada. Saliendo.")
 
     def run(self):
+        # Reinicio del bucle principal del juego
         self.update_loop()
         self.screen.mainloop()
 
