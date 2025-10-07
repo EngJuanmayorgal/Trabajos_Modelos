@@ -1,6 +1,7 @@
 import turtle
 import time
 import random
+import tkinter
 
 # Lista de colores posibles para la serpiente, comida y fondo (excepto black)
 COLORS = [
@@ -215,7 +216,7 @@ class Scoreboard:
         self.game_over_visible = False
 
     def update(self):
-        # Actualiza el puntaje 
+        # Actualiza el puntaje
         self.writer.clear()
         self.writer.write(
             f"Score: {self.score}     High Score: {self.high_score}",
@@ -223,7 +224,7 @@ class Scoreboard:
             font=("courier", 24, "normal"),
         )
 
-    def update_decorator(self, message): 
+    def update_decorator(self, message):
         # Muestra en pantalla el decorador que se usa
         self.writer_decorador.clear()
         self.writer_decorador.write(
@@ -267,11 +268,11 @@ class Scoreboard:
 # -------------------
 # Adapter Pattern
 # -------------------
-class ControlAdapter:  # //
+class ControlAdapter:
     def conectar_controles(self, game):
         raise NotImplementedError
 
-class KeyboardAdapter(ControlAdapter):  # //
+class KeyboardAdapter(ControlAdapter):
     def conectar_controles(self, game):
         game.screen.listen()
         game.screen.onkeypress(game.snake.go_up, "Up")
@@ -285,37 +286,37 @@ class MouseAdapter(ControlAdapter):  # // nuevo
         game.screen.listen()
         game.screen.onkeypress(game.clear_game_over_message, "space")
         self.game = game
-        # // iniciar seguimiento continuo del mouse
+        # Iniciar seguimiento continuo del mouse
         self._follow_mouse()
 
     def _follow_mouse(self):
         try:
             g = self.game
-            # coordenadas del puntero respecto al canvas (tkinter)
+            # Coordenadas del puntero respecto al canvas (tkinter)
             x = g.screen.cv.winfo_pointerx() - g.screen.cv.winfo_rootx()
             y = g.screen.cv.winfo_pointery() - g.screen.cv.winfo_rooty()
-            # ajustar al centro del canvas
+            # Ajustar al centro del canvas
             x = x - g.screen.window_width() // 2
             y = g.screen.window_height() // 2 - y
 
-            # limitar objetivo dentro de los bordes jugables
+            # Limitar objetivo dentro de los bordes jugables
             max_coord = 280
             x = max(-max_coord, min(max_coord, x))
             y = max(-max_coord, min(max_coord, y))
 
             head = g.snake.head
-            # // mover la cabeza suavemente hacia el puntero
+            # Mover la cabeza suavemente hacia el puntero
             if not g.scoreboard.game_over_visible:
                 dx = x - head.xcor()
                 dy = y - head.ycor()
                 distancia = (dx**2 + dy**2) ** 0.5
                 if distancia > 1:
                     head.setheading(head.towards(x, y))
-                    # paso proporcional, evita saltos grandes
+                    # Paso proporcional, evita saltos grandes
                     paso = min(20, max(6, distancia / 5))
                     head.forward(paso)
 
-            # seguir llamando cada ~20 ms
+            # Seguir llamando cada ~20 ms
             g.screen.ontimer(self._follow_mouse, 20)
         except turtle.Terminator:
             pass
@@ -374,25 +375,25 @@ class Game:
         }
 
         self.screen.listen()
-        # // notamos que los listeners directos se configuran desde el adapter seleccionado
+        # Notamos que los listeners directos se configuran desde el adapter seleccionado
         self.screen.onkeypress(self.clear_game_over_message, "space")  # botón general para limpiar game over
 
-        self.control_adapter = None  # //
-        self.invulnerable_ticks = 0  # // nuevo: ticks para evitar colisiones justo después de crecer
+        self.control_adapter = None
+        self.invulnerable_ticks = 0  # Nuevo: ticks para evitar colisiones justo después de crecer
 
-    def seleccionar_control(self):  # //
+    def seleccionar_control(self):
         selector = ControlSelector(self.screen)
         selector.seleccionar()
         if selector.selection == "keyboard":
             self.control_adapter = KeyboardAdapter()
-            # // asegurar que la serpiente use el movimiento por pasos
+            # Asegurar que la serpiente use el movimiento por pasos
             self.snake.direction = "stop"
         elif selector.selection == "mouse":
             self.control_adapter = MouseAdapter()
-            # // en modo mouse evitamos que direction mueva la cabeza
+            # En modo mouse evitamos que direction mueva la cabeza
             self.snake.direction = "stop"
 
-        # conectar controles via adapter
+        # Conectar controles via adapter
         self.control_adapter.conectar_controles(self)
 
     def clear_game_over_message(self):
@@ -404,7 +405,7 @@ class Game:
             self.screen.bgcolor("black")
 
     def check_collisions(self):
-        # // modificado: si hay invulnerabilidad de frames no chequear colisiones (evita game over justo al comer)
+        # Modificacion: si hay invulnerabilidad de frames no chequear colisiones (evita game over justo al comer)
         if self.invulnerable_ticks > 0:
             self.invulnerable_ticks -= 1
             return
@@ -418,7 +419,7 @@ class Game:
             if not self.scoreboard.game_over_visible:
                 self.scoreboard.game_over()
 
-        # // modificado: si el control actual es el MouseAdapter, no chequear colisiones con el cuerpo
+        # Modificacion: si el control actual es el MouseAdapter, no chequear colisiones con el cuerpo
         if isinstance(self.control_adapter, MouseAdapter):
             return
 
@@ -451,7 +452,7 @@ class Game:
         try:
             self.screen.update()
             if not self.scoreboard.game_over_visible:
-                # mover segmentos y cabeza en cada frame
+                # Mover segmentos y cabeza en cada frame
                 self.snake.move()
                 self.check_food()
                 self.check_collisions()
