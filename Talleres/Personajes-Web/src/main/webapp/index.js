@@ -6,9 +6,8 @@ function CambiarPersonaje() {
     const response = await fetch(`EscogerServlet?type=${type}`);
     const data = await response.json();
     if (data.estado) {
-      alert("Ya se tiene una fabrica");
-    };
-
+      alert("Ya se tiene una fabrica" + data.estado);
+    }
     // Mostrar personaje principal
     const main = document.getElementById("mainCharacter");
     main.innerHTML = `

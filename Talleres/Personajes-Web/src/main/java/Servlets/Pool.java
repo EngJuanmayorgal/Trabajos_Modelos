@@ -19,7 +19,7 @@ public class Pool {
         if (instancia == null) {
             instancia = new Pool();
             Escoger(pers);
-            estado = true;
+            estado =true;
         }
         return instancia;
     }
