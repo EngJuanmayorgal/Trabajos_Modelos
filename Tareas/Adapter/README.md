@@ -22,13 +22,8 @@ En este proyecto, se emplea para cambiar:
 - El color del cuerpo de la serpiente.
 - El tamaño de la serpiente (reduciendo segmentos).
 
-# 🐍 Juego Snake – Patrones de Diseño: Decorator y Adapter
-
-Este proyecto implementa el clásico **juego Snake** utilizando la librería `turtle` de Python, incorporando los patrones de diseño **Decorator** y **Adapter**.
-
-El objetivo principal fue **mejorar la estructura, flexibilidad y escalabilidad** del juego mediante principios de programación orientada a objetos (POO).
-
 ---
+
 ## Características
 - Movimiento clásico del juego Snake.
 - Comida con colores aleatorios.
