@@ -15,12 +15,17 @@ El objetivo principal fue **mejorar la estructura, flexibilidad y escalabilidad*
 
 ## 🧩 Patrones de Diseño Utilizados
 
-### 🖌️ **Patrón Decorator**
+### **Patrón Decorator**
 Permite modificar dinámicamente aspectos visuales del juego sin alterar su estructura principal.
 En este proyecto, se emplea para cambiar:
 - El color del fondo.
 - El color del cuerpo de la serpiente.
 - El tamaño de la serpiente (reduciendo segmentos).
+
+---
+
+### **Patrón Adapter**
+Permite integrar distintos modos de control (teclado o ratón) sin cambiar la lógica principal del juego.
 
 ---
 
@@ -34,20 +39,6 @@ En este proyecto, se emplea para cambiar:
 - Modos de control de la serpiente:
   - Teclado.
   - Raton.
-
-## Patrones de Diseño Utilizados
-
-### **Patrón Decorator**
-Permite modificar dinámicamente aspectos visuales del juego sin alterar su estructura principal.
-En este proyecto, se emplea para cambiar:
-- El color del fondo.
-- El color del cuerpo de la serpiente.
-- El tamaño de la serpiente (reduciendo segmentos).
-
----
-
-### **Patrón Adapter**
-Permite integrar distintos modos de control (teclado o ratón) sin cambiar la lógica principal del juego.
 
 ---
 
