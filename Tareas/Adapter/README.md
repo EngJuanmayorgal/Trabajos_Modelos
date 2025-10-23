@@ -22,8 +22,6 @@ En este proyecto, se emplea para cambiar:
 - El color del cuerpo de la serpiente.
 - El tamaño de la serpiente (reduciendo segmentos).
 
----
-
 ### **Patrón Adapter**
 Permite integrar distintos modos de control (teclado o ratón) sin cambiar la lógica principal del juego.
 
