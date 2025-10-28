@@ -1,16 +1,10 @@
-"""
-JuegoSimple: Ejemplo de patrones Command + Chain of Responsibility.
-El jugador se mueve con W, A, S, D y pierde si toca una bolita roja.
-Las bolas comienzan a caer solo cuando el jugador se mueve por primera vez.
-"""
-
 import pygame
 import random
 
 pygame.init()
 WIDTH, HEIGHT = 600, 400
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Mini Juego - Command + Chain of Responsibility")
+pygame.display.set_caption("Mini Juego")
 clock = pygame.time.Clock()
 
 class Command:
@@ -35,14 +29,13 @@ class MoveRight(Command):
 
 
 class InputHandler:
-    """
-    Cada manejador revisa una tecla y pasa el control si no es la suya.
-    """
+    # Revisa una tecla y pasa el control si no es la suya.
     def __init__(self, key, command, next_handler=None):
         self.key = key
         self.command = command
         self.next = next_handler
 
+    # Ciclo para el manejador de la tecla
     def handle(self, keys, player):
         moved = False
         if keys[self.key]:
@@ -54,6 +47,7 @@ class InputHandler:
 
 
 class Player:
+    # Creacion del jugador en sus respectivas proporciones
     def __init__(self):
         self.x, self.y = WIDTH // 2, HEIGHT // 2
         self.size = 30
@@ -79,6 +73,8 @@ class Player:
 
 
 class Enemy:
+    # Creacion de los enemigos (bolas)
+    # Posicion y velocidad aleatoria
     def __init__(self):
         self.x = random.randint(0, WIDTH)
         self.y = random.randint(-100, -10)
@@ -144,7 +140,6 @@ while running:
                 e.update()
                 e.draw()
 
-        # Dibujar jugador
         player.draw()
 
         # Verificar colisión
