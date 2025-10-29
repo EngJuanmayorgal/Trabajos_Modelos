@@ -48,5 +48,5 @@ Cada manejador tiene una tarea específica y, si no puede resolverla, la pasa al
 ---
 
 ## Requisitos
-Python 3.8 o superior
-Librería Pygame
+* Python 3.8 o superior
+* Librería Pygame
