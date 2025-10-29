@@ -1,7 +1,10 @@
 body {
+<<<<<<< HEAD
     background: url('images/fondo.jpeg');
     background-size: cover;
     background-attachment: fixed;
+=======
+>>>>>>> d4f00e2851bdac93d533cced804862ea0fc00432
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -27,8 +30,13 @@ body {
 }
 
 .main-character img {
+<<<<<<< HEAD
     max-width: 75%;
     max-height: 75%;
+=======
+    max-width: 100%;
+    max-height: 100%;
+>>>>>>> d4f00e2851bdac93d533cced804862ea0fc00432
 }
 
 /* Panel derecho */
@@ -91,6 +99,7 @@ select {
 
 .info {
     font-size:26px
+<<<<<<< HEAD
 }
 
 
@@ -107,4 +116,6 @@ button {
 
 button:hover {
     background-color: #45a049;
+=======
+>>>>>>> d4f00e2851bdac93d533cced804862ea0fc00432
 }
