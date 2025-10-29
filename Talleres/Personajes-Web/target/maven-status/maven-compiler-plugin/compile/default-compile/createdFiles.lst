@@ -1,0 +1,16 @@
+Cuerpos\Cuerpo.class
+Armadura\ArmaduraHumano.class
+Arma\ArmaHumano.class
+com\modelos\personajes\JakartaRestConfiguration.class
+Servlets\Pool.class
+Armadura\ArmaduraEnano.class
+Arma\Arma.class
+Armadura\ArmaduraOrco.class
+Monturas\MonturaElfo.class
+Armadura\ArmaduraElfo.class
+Armadura\Armadura.class
+Monturas\Montura.class
+Monturas\MonturaHumano.class
+Fabrica\FabricaAbstracta.class
+Monturas\MonturaEnano.class
+Monturas\MonturaOrco.class

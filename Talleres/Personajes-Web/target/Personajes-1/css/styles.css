@@ -1,0 +1,110 @@
+body {
+    background: url('images/fondo.jpeg');
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    margin: 10px;
+    padding: 10px;
+}
+
+/* Zona principal personaje */
+.main-character {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    flex-direction: column;
+}
+
+.main-character img {
+    max-width: 75%;
+    max-height: 75%;
+}
+
+/* Panel derecho */
+.sidebar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Barra de selección de tipo */
+.character-type {
+    display: flex;
+    border: 3px solid black;
+    padding: 5px;
+    background: #fff;
+    justify-content: space-between;
+    align-items: center;
+}
+
+select {
+    width: 100%;
+    padding: 5px;
+    font-size: 16px;
+}
+
+/* Partes del personaje */
+.parts {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    opacity: 0.8;
+    padding: 10px;
+    background: #fff;
+    gap: 10px;
+}
+
+.part {
+    border: 2px solid black;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    background: #f9f9f9;
+}
+
+.part:hover {
+    transform: scale(1.02);
+    background: #e3e3e3;
+}
+
+.part img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+}
+
+.info {
+    font-size:26px
+}
+
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}

@@ -1,0 +1,64 @@
+-J-Duser.language=
+-J-Duser.country=
+@options
+@packages
+-classpath
+'C:/Users/jeide/.m2/repository/jakarta/platform/jakarta.jakartaee-api/8.0.0/jakarta.jakartaee-api-8.0.0.jar;C:/Users/jeide/.m2/repository/one/xingyi/json/1.1/json-1.1.jar;C:/Users/jeide/.m2/repository/org/json/json/20180813/json-20180813.jar;C:/Users/jeide/.m2/repository/one/xingyi/rest/1.1/rest-1.1.jar;C:/Users/jeide/.m2/repository/one/xingyi/rest/1.1/rest-1.1-tests.jar'
+-encoding
+'UTF-8'
+-protected
+-source
+'1.8'
+-sourcepath
+'C:/Users/jeide/OneDrive/Documentos/Trabajos_Modelos/Talleres/Personajes-Web/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2025. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/jeide/OneDrive/Documentos/Trabajos_Modelos/Talleres/Personajes-Web/target/reports/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'Personajes-Web 1 API'
+-linkoffline
+'https://docs.oracle.com/javase/8/docs/api' 'C:/Users/jeide/OneDrive/Documentos/Trabajos_Modelos/Talleres/Personajes-Web/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'Personajes-Web 1 API'
+Arma
+Armadura
+com.modelos.personajes
+Cuerpos
+Fabrica
+Monturas
+Servlets
+C:\Users\jeide\.m2\repository\jakarta\platform\jakarta.jakartaee-api\8.0.0\jakarta.jakartaee-api-8.0.0.jar = 1749660662363
+C:\Users\jeide\.m2\repository\one\xingyi\json\1.1\json-1.1.jar = 1758040821790
+C:\Users\jeide\.m2\repository\org\json\json\20180813\json-20180813.jar = 1758040822041
+C:\Users\jeide\.m2\repository\one\xingyi\rest\1.1\rest-1.1.jar = 1758040822119
+C:\Users\jeide\.m2\repository\one\xingyi\rest\1.1\rest-1.1-tests.jar = 1758040822813
+C:\Users\jeide\OneDrive\Documentos\Trabajos_Modelos\Talleres\Personajes-Web\src\main\java = 1758040478928
+C:\Users\jeide\OneDrive\Documentos\Trabajos_Modelos\Talleres\Personajes-Web\target\reports\apidocs\allclasses-index.html = 1758310310988
+C:\Users\jeide\OneDrive\Documentos\Trabajos_Modelos\Talleres\Personajes-Web\target\reports\apidocs\allpackages-index.html = 1758310310997
+C:\Users\jeide\OneDrive\Documentos\Trabajos_Modelos\Talleres\Personajes-Web\target\reports\apidocs\copy.svg = 1758310311228
+C:\Users\jeide\OneDrive\Documentos\Trabajos_Modelos\Talleres\Personajes-Web\target\reports\apidocs\element-list = 1758310310464
+C:\Users\jeide\OneDrive\Documentos\Trabajos_Modelos\Talleres\Personajes-Web\target\reports\apidocs\help-doc.html = 1758310311209
+C:\Users\jeide\OneDrive\Documentos\Trabajos_Modelos\Talleres\Personajes-Web\target\reports\apidocs\index-all.html = 1758310311183
+C:\Users\jeide\OneDrive\Documentos\Trabajos_Modelos\Talleres\Personajes-Web\target\reports\apidocs\index.html = 1758310310923
+C:\Users\jeide\OneDrive\Documentos\Trabajos_Modelos\Talleres\Personajes-Web\target\reports\apidocs\link.svg = 1758310311230
+C:\Users\jeide\OneDrive\Documentos\Trabajos_Modelos\Talleres\Personajes-Web\target\reports\apidocs\member-search-index.js = 1758310311063
+C:\Users\jeide\OneDrive\Documentos\Trabajos_Modelos\Talleres\Personajes-Web\target\reports\apidocs\module-search-index.js = 1758310311000
+C:\Users\jeide\OneDrive\Documentos\Trabajos_Modelos\Talleres\Personajes-Web\target\reports\apidocs\overview-summary.html = 1758310311191
+C:\Users\jeide\OneDrive\Documentos\Trabajos_Modelos\Talleres\Personajes-Web\target\reports\apidocs\overview-tree.html = 1758310310916
+C:\Users\jeide\OneDrive\Documentos\Trabajos_Modelos\Talleres\Personajes-Web\target\reports\apidocs\package-search-index.js = 1758310311002
+C:\Users\jeide\OneDrive\Documentos\Trabajos_Modelos\Talleres\Personajes-Web\target\reports\apidocs\script.js = 1758310311226
+C:\Users\jeide\OneDrive\Documentos\Trabajos_Modelos\Talleres\Personajes-Web\target\reports\apidocs\search-page.js = 1758310311238
+C:\Users\jeide\OneDrive\Documentos\Trabajos_Modelos\Talleres\Personajes-Web\target\reports\apidocs\search.html = 1758310311187
+C:\Users\jeide\OneDrive\Documentos\Trabajos_Modelos\Talleres\Personajes-Web\target\reports\apidocs\search.js = 1758310311236
+C:\Users\jeide\OneDrive\Documentos\Trabajos_Modelos\Talleres\Personajes-Web\target\reports\apidocs\serialized-form.html = 1758310310651
+C:\Users\jeide\OneDrive\Documentos\Trabajos_Modelos\Talleres\Personajes-Web\target\reports\apidocs\stylesheet.css = 1758310311217
+C:\Users\jeide\OneDrive\Documentos\Trabajos_Modelos\Talleres\Personajes-Web\target\reports\apidocs\tag-search-index.js = 1758310311068
+C:\Users\jeide\OneDrive\Documentos\Trabajos_Modelos\Talleres\Personajes-Web\target\reports\apidocs\type-search-index.js = 1758310311005
