@@ -45,4 +45,8 @@ Cada manejador tiene una tarea específica y, si no puede resolverla, la pasa al
 * `MoveRight`, `MoveLeft`, `MoveUp`, `MoveDoen`: comandos concretos.
 * `InputHandler`: clase base del patrón Chain of Responsibility.
 
+---
 
+## Requisitos
+Python 3.8 o superior
+Librería Pygame
