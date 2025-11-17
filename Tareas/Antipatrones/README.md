@@ -3,7 +3,7 @@
 - **Juan David Mayorga López** – 20232020116
 - **Samuel Andrés Barrera Pulido** – 20232020156
 - **Mariam Betin Escobar** – 20232020300
-
+---
 **Correccion de Antipatrones**
 
 Este proyecto parte de un código diseñado con antipatrones para analizarlos y corregirlos. El objetivo fue identificar tres antipatrones principales, explicar su impacto y proponer una solución manteniendo la misma estructura general del programa.
@@ -36,7 +36,8 @@ BaseDomestic, WeightThreshold...
 
 Esto hace que las reglas sean claras y fáciles de ajustar.
 
-1. Code-Paste Programming
+---
+3. Code-Paste Programming
 
 Problema:
 Los métodos ship_cost_domestic y ship_cost_international tenían casi la misma lógica con pequeñas variaciones.
